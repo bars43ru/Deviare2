@@ -29,7 +29,7 @@
 
 #include "StdAfx.h"
 #include "MiscHelpers.h"
-#include <typeinfo.h>
+#include <typeinfo>
 #include "SpyMgr.h"
 #include "Process.h"
 #include "ProcessesEnum.h"
