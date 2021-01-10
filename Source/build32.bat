@@ -26,13 +26,5 @@ IF NOT %ERRORLEVEL% == 0 (
     GOTO end
 )
 
-DEVENV DvEngine.sln /rebuild "%__Config%|x64"
-IF NOT %ERRORLEVEL% == 0 (
-    ENDLOCAL
-    ECHO Errors detected while compiling Deviare
-    PAUSE
-    GOTO end
-)
-
 :end
 ENDLOCAL

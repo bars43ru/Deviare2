@@ -18,14 +18,6 @@ CALL "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Preview\Common7\Tools\VsD
 
 :do_process
 
-DEVENV DvEngine.sln /rebuild "%__Config%|Win32"
-IF NOT %ERRORLEVEL% == 0 (
-    ENDLOCAL
-    ECHO Errors detected while compiling Deviare
-    PAUSE
-    GOTO end
-)
-
 DEVENV DvEngine.sln /rebuild "%__Config%|x64"
 IF NOT %ERRORLEVEL% == 0 (
     ENDLOCAL

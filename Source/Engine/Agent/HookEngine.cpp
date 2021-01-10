@@ -522,6 +522,7 @@ HRESULT CNktDvHookEngine::Unhook(__in LPDWORD lpdwHookIds, __in SIZE_T nCount)
         {
           if (lpHookEntry->dwId == lpdwHookIds[nHookIdx])
           {
+            cHookLib.EnableHook(&lpHookEntry->sHookLibInfo, 1, FALSE);
             cHooksList.Remove(lpHookEntry);
             aTempHookEntriesList[nTempHookEntriesCount] = lpHookEntry;
             aHookLibItemsList[nTempHookEntriesCount] = &(lpHookEntry->sHookLibInfo);
@@ -539,7 +540,7 @@ HRESULT CNktDvHookEngine::Unhook(__in LPDWORD lpdwHookIds, __in SIZE_T nCount)
         continue;
     }
     //disable hooks
-    cHookLib.EnableHook(aHookLibItemsList, nTempHookEntriesCount, FALSE);
+    //cHookLib.EnableHook(aHookLibItemsList, nTempHookEntriesCount, FALSE);
     //remove hooks while the stub is not in use
     nStart = 0;
     while (nStart < nTempHookEntriesCount)
